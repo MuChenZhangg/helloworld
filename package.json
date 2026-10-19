@@ -83,7 +83,7 @@
   "scripts": {
     "build-css": "sass src --no-source-map",
     "watch-css": "sass --watch src",
-    "start": "(start npm run watch-css && vite) || (npm run watch-css & vite)",
+    "start": "npm run build && vite preview --host 0.0.0.0 --port 5173",
     "prebuild": "bash save-ui-version.sh",
     "build": "npm run build-css && tsc && vite build",
     "format": "prettier --write '{**/*.md,src/**/*.{js,scss,ts,tsx}}'",
