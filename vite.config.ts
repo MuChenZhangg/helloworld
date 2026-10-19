@@ -11,9 +11,14 @@ const config = ({ mode }) => {
       target: 'es2022',
     },
     plugins: [react(), viteTsconfigPaths(), splitVendorChunkPlugin()],
+    preview: {
+      host: '0.0.0.0',
+      port: 5173,
+      allowedHosts: true,
+    },
     server: {
-      port: parseInt(process.env.VITE_PORT ?? '5173'),
-      host: process.env.VITE_HOST ?? 'localhost',
+      host: '0.0.0.0',
+      port: 5173,
       proxy: {
         '/api': {
           target: process.env.VITE_API_URL,
